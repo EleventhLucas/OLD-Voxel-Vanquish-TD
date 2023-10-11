@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class PauseMenu : MonoBehaviour {
 
     public static bool isPaused;
     public NodeUI nodeUI;
 
-    public GameObject ui;
+    [FormerlySerializedAs("ui")] public GameObject UI;
     public GameObject PauseButton;
     public BannerAd bannerAd;
 
@@ -37,7 +38,7 @@ public class PauseMenu : MonoBehaviour {
     public void Toggle()
     {
         isPaused = true;
-        ui.SetActive(!ui.activeSelf);
+        UI.SetActive(!UI.activeSelf);
         PauseButton.SetActive(false);
         if (GameManager.GameIsOver)
         {
@@ -45,7 +46,7 @@ public class PauseMenu : MonoBehaviour {
             return;
         }
 
-        if (ui.activeSelf)
+        if (UI.activeSelf)
         {
             Time.timeScale = 0f;
             bannerAd.ShowBanner();

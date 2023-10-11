@@ -84,19 +84,19 @@ public class NodeUI : MonoBehaviour {
         {
             return tower.GetComponent<Turret>().range;
         }
-        catch (Exception e)
+        catch (Exception)
         {
             try
             {
                 return tower.GetComponent<TurretAOE>().range;
             }
-            catch (Exception f)
+            catch (Exception)
             {
                 try
                 {
                     return tower.GetComponent<TurretDOT>().range;
                 }
-                catch (Exception g)
+                catch (Exception)
                 {
                     return 0;
                 }

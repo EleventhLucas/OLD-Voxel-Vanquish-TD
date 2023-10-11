@@ -20,7 +20,8 @@ public class GameManager : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    private void Update () 
+    {
         if (GameManager.GameIsOver)
         {
             fastForwardOnUI.SetActive(false);
@@ -32,12 +33,14 @@ public class GameManager : MonoBehaviour {
         if (!PauseMenu.isPaused && isFastForward)
         {
             Time.timeScale = 2;
-        } else if (!PauseMenu.isPaused)
-        {
-            Time.timeScale = 1;
-        } else
+        } 
+        else if (PauseMenu.isPaused)
         {
             Time.timeScale = 0;
+        } 
+        else
+        {
+            Time.timeScale = 1;
         }
 
         if (Input.GetKeyDown("e"))
@@ -65,7 +68,7 @@ public class GameManager : MonoBehaviour {
         isFastForward = false;
     }
 
-    void EndGame ()
+    private void EndGame ()
     {
         nodeUI.Hide();
         GameIsOver = true;
