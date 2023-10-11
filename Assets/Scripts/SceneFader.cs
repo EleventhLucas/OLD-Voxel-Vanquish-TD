@@ -3,8 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneFader : MonoBehaviour {
-
+public class SceneFader : MonoBehaviour 
+{
     public Image img;
     public AnimationCurve curve;
 
@@ -30,8 +30,6 @@ public class SceneFader : MonoBehaviour {
             img.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }
-
-        //Load a Scene?
     }
 
     private IEnumerator FadeOut(string scene)
@@ -48,6 +46,4 @@ public class SceneFader : MonoBehaviour {
 
         SceneManager.LoadScene(scene);
     }
-
-
 }

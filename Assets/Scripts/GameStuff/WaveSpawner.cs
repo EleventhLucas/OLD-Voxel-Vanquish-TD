@@ -53,7 +53,7 @@ public class WaveSpawner : MonoBehaviour {
 
         countdown = Mathf.Clamp(countdown, 0f, Mathf.Infinity);
 
-        WaveCountdownText.text = string.Format("{0:00.00}", countdown);
+        WaveCountdownText.text = $"{countdown:00.00}";
         WaveCountText.text = "Wave: " + (waveNumber + 1) + "/" + waves.Length;
         if (GameManager.GameIsOver)
         {
@@ -67,8 +67,6 @@ public class WaveSpawner : MonoBehaviour {
         PlayerStats.Rounds++;
 
         Wave wave = waves[waveNumber];
-
-        //EnemiesAlive = wave.count;
 
         for (int i = 0; i < wave.count; i++)
         {

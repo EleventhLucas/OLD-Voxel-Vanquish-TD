@@ -13,21 +13,21 @@ public class BannerAd : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Advertisement.Initialize (gameId, testMode);
-        Debug.Log("Unity Ads initialized: " + Advertisement.isInitialized);
-        Debug.Log("Unity Ads is supported: " + Advertisement.isSupported);
+        //Advertisement.Initialize (gameId, testMode);
+        //Debug.Log("Unity Ads initialized: " + Advertisement.isInitialized);
+        //Debug.Log("Unity Ads is supported: " + Advertisement.isSupported);
         //Debug.Log("Unity Ads in test mode: " + Advertisement.testMode);
     }
 
     public void ShowBanner()
     {
-        StartCoroutine(ShowBannerWhenReady());
-        Debug.Log("Unity Ads initialized on call: " + Advertisement.isInitialized);
+        //StartCoroutine(ShowBannerWhenReady());
+        //Debug.Log("Unity Ads initialized on call: " + Advertisement.isInitialized);
     }
 
     public void HideBanner()
     {
-        Advertisement.Banner.Hide();
+        //Advertisement.Banner.Hide();
     }
 
     IEnumerator ShowBannerWhenReady ()
@@ -38,5 +38,4 @@ public class BannerAd : MonoBehaviour
         }
         Advertisement.Banner.Show(banner_ad);
     }
-    
 }

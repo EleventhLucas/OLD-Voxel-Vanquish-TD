@@ -23,12 +23,11 @@ public class CompleteLevel : MonoBehaviour {
         sceneFader.FadeTo(menuSceneName);
     }
 
-    public void UnlockNextLevel ()
+    private void UnlockNextLevel ()
     {
         if (PlayerPrefs.GetInt("levelReached") < levelToUnlock)
         {
             PlayerPrefs.SetInt("levelReached", levelToUnlock);
-        } else
-        return;
+        }
     }
 }
