@@ -9,8 +9,6 @@ public class PauseMenu : MonoBehaviour {
 
     [FormerlySerializedAs("ui")] public GameObject UI;
     public GameObject PauseButton;
-    public BannerAd bannerAd;
-
     public string menuSceneName = "MainMenu";
 
     public SceneFader sceneFader;
@@ -29,10 +27,6 @@ public class PauseMenu : MonoBehaviour {
         {
             nodeUI.Hide();
         }
-        if (!isPaused)
-        {
-            bannerAd.HideBanner();
-        }
     }
 
     public void Toggle()
@@ -49,12 +43,10 @@ public class PauseMenu : MonoBehaviour {
         if (UI.activeSelf)
         {
             Time.timeScale = 0f;
-            bannerAd.ShowBanner();
         } else
         {
             Time.timeScale = 1f;
             PauseButton.SetActive(true);
-            bannerAd.HideBanner();
             isPaused = false;
         }
     }
